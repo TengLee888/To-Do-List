@@ -1,0 +1,22 @@
+form {
+display: inline-block;
+}
+
+input{
+padding: 4px 15px 4px 5px;
+}
+
+
+#addBtn {
+  display: inline-block;
+  background-color:#bbb;
+  color:#ffffff;
+  border-radius: 5px;
+  text-align:center;
+  margin-top:2px;
+  padding: 5px 15px;
+}
+
+#addBtn:hover{
+cursor: pointer;
+opacity: .8;}

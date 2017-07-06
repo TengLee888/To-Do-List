@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>To Do List(jQuery)</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <h2>To Do List</h2>
+    <h4>jQuery version</h4>
+    <form>
+      <input type="text" id="form" name="todoText" placeholder="New List...">
+    </form>
+    <div id="addBtn">
+      Add
+    </div>
+    <ul class="todoList"></ul>
+
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#addBtn').click(function(){
+          var toAdd = $('input[name = todoText]').val();
+          $('.todoList').append('<li class="item">' + toAdd + '</li>');
+        });
+
+        $(".todoList").on('click' , '.item' , function(){
+          $(this).remove();
+        });
+      });
+    </script>
+  </body>
+</html>

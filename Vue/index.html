@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>To Do List(Vue)</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js"></script>
+  </head>
+  <body>
+    <h2>To Do List</h2>
+    <h4>Vue version</h4>
+    <div id="app">
+      <input type="text" v-on:keyup.enter="addTodo(todoText)" v-model="todoText" placeholder="New list...">
+      <div id="addBtn" v-on:click="addTodo(todoText)">
+        Add
+      </div>
+      <ul>
+        <li v-for="(todo,val) in todos"  v-on:click="removeTodo(todo)">
+          {{todo.content}}
+        </li>
+      </ul>
+
+      <pre>
+        {{this.todos}}
+      </pre>
+    </div>
+
+
+    <script type="text/javascript">
+      var app = new Vue ({
+        el: '#app',
+        data:{
+          todos:[],
+          todoText:''
+        },
+
+        methods:{
+          addTodo: function(todo){
+            this.todos.push({content:todo})
+          },
+
+          removeTodo: function(todo){
+            this.todos.splice(this.todos.indexOf(todo), 1);
+          }
+        }
+      })
+
+    </script>
+  </body>
+</html>
